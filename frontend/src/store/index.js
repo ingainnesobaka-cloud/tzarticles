@@ -1,8 +1,10 @@
 import { createStore } from 'vuex'
+import articles from './modules/articles'
+import comments from './modules/comments'
 
 export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+  modules: {
+    articles,
+    comments
+  }
 })
