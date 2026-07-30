@@ -23,6 +23,11 @@ const routes = [
     name: 'ArticleDetail',
     component: () => import('@/views/ArticleDetail.vue'),
   }, 
+  {
+  path: '/analytics',
+  name: 'Analytics',
+  component: () => import('@/views/Analytics.vue'),
+  },
 ];
 
 const router = createRouter({

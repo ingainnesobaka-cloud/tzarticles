@@ -14,3 +14,6 @@ export const updateComment = (articleId, commentId, data) =>
 
 export const deleteComment = (articleId, commentId) =>
   apiClient.delete(`/article/${articleId}/comment/${commentId}`);
+
+export const fetchAnalytics = (dateFrom, dateTo) =>
+  apiClient.get('/analytic/comments', { params: { dateFrom, dateTo } });
