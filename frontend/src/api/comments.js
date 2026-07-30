@@ -9,7 +9,7 @@ export const fetchComment = (articleId, commentId) =>
 export const createComment = (articleId, data) =>
   apiClient.post(`/article/${articleId}/comment`, data);
 
-export const updateComment = (articleId, commentId, data) =>
+export const updateComment = ({ articleId, commentId, data }) =>
   apiClient.patch(`/article/${articleId}/comment/${commentId}`, data);
 
 export const deleteComment = (articleId, commentId) =>

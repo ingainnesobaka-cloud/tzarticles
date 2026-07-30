@@ -33,9 +33,13 @@ const actions = {
     return response.data;
   },
   async updateComment({ commit }, { articleId, commentId, text }) {
-    const response = await commentsApi.updateComment(articleId, commentId, { text });
-    commit('UPDATE_COMMENT', response.data);
-  },
+  const { data } = await commentsApi.updateComment({
+    articleId,
+    commentId,
+    data: { text }
+  });
+  commit('UPDATE_COMMENT', data);
+},
   async deleteComment({ commit }, { articleId, commentId }) {
     await commentsApi.deleteComment(articleId, commentId);
     commit('REMOVE_COMMENT', commentId);
